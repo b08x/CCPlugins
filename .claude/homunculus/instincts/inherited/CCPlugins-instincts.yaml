@@ -1,0 +1,614 @@
+# Instincts generated from https://github.com/b08x/CCPlugins
+# Generated: 2026-05-28T02:21:33.528Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: CCPlugins-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Commit Length
+
+## Action
+
+Keep commit messages concise (~41 characters)
+
+## Evidence
+
+- Average commit message length: 41 chars
+- Based on 40 commits
+
+---
+id: CCPlugins-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: CCPlugins-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: CCPlugins-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: CCPlugins-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: CCPlugins-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~14x per month
+- Files: **/*.test.*
+
+---
+id: CCPlugins-workflow-test-driven-development
+trigger: "when adding new functionality"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Workflow Test Driven Development
+
+## Action
+
+Follow the test-driven-development workflow:
+1. Write failing test
+2. Implement code to pass test
+3. Refactor if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: **/*.test.*, **/*.spec.*, src/**/*
+
+---
+id: CCPlugins-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: src/**/*
+
+---
+id: CCPlugins-workflow-add-or-enhance-command
+trigger: "when doing add or enhance command"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Workflow Add Or Enhance Command
+
+## Action
+
+Follow the add-or-enhance-command workflow:
+1. Create or update the command markdown file under commands/
+2. Update README.md to document the new/changed command
+3. Update CHANGELOG.md to record the addition/change
+4. Update install.sh, uninstall.py, and uninstall.sh to include or remove the command
+5. Optionally update CONTRIBUTING.md if developer workflow changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: commands/*.md, README.md, CHANGELOG.md
+
+---
+id: CCPlugins-workflow-refactor-or-enhance-existing-command
+trigger: "when doing refactor or enhance existing command"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Workflow Refactor Or Enhance Existing Command
+
+## Action
+
+Follow the refactor-or-enhance-existing-command workflow:
+1. Edit the relevant command markdown file(s) under commands/
+2. Update README.md and/or CHANGELOG.md to reflect the change
+3. If session or folder logic changes, update related command files in batch
+4. If installer/uninstaller scripts are affected, update them
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: commands/*.md, README.md, CHANGELOG.md
+
+---
+id: CCPlugins-workflow-session-or-folder-path-update
+trigger: "when doing session or folder path update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Workflow Session Or Folder Path Update
+
+## Action
+
+Follow the session-or-folder-path-update workflow:
+1. Edit multiple command files to update path/session logic (e.g., .claude/ → visible folders)
+2. Update README.md and/or CHANGELOG.md to document the change
+3. Batch update affected commands for consistency
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: commands/fix-imports.md, commands/implement.md, commands/refactor.md
+
+---
+id: CCPlugins-workflow-quality-checks-and-validation-enhancement
+trigger: "when doing quality checks and validation enhancement"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Workflow Quality Checks And Validation Enhancement
+
+## Action
+
+Follow the quality-checks-and-validation-enhancement workflow:
+1. Edit commands to add or update validation/quality check logic (e.g., commands/commit.md, commands/contributing.md, commands/test.md, commands/todos-to-issues.md, commands/refactor.md, commands/implement.md)
+2. Update README.md and/or CHANGELOG.md to document the new requirements
+3. Update CONTRIBUTING.md if developer workflow changes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: commands/commit.md, commands/contributing.md, commands/test.md
+
+---
+id: CCPlugins-workflow-documentation-overhaul-or-update
+trigger: "when doing documentation overhaul or update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/b08x/CCPlugins
+---
+
+# CCPlugins Workflow Documentation Overhaul Or Update
+
+## Action
+
+Follow the documentation-overhaul-or-update workflow:
+1. Edit README.md and/or CHANGELOG.md with new sections or updates
+2. Edit or add relevant command markdown files under commands/
+3. Update CONTRIBUTING.md if developer workflow changes
+4. If a docs command exists, update commands/docs.md
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: README.md, CHANGELOG.md, CONTRIBUTING.md
+
+---
+id: ccplugins-instinct-file-naming-camelCase
+trigger: "When creating a new file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., myNewCommand.py)
+
+## Evidence
+
+- Pattern in namingConventions.files: camelCase
+
+---
+id: ccplugins-instinct-function-naming-camelCase
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Function Naming CamelCase
+
+## Action
+
+Use camelCase for function names (e.g., getUserInput)
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: ccplugins-instinct-class-naming-PascalCase
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Class Naming PascalCase
+
+## Action
+
+Use PascalCase for class names (e.g., CommandHandler)
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: ccplugins-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names (e.g., DEFAULT_TIMEOUT)
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: ccplugins-instinct-relative-imports
+trigger: "When importing modules within the package"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Relative Imports
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: ccplugins-instinct-named-exports
+trigger: "When exporting functions or classes from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Named Exports
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: ccplugins-instinct-test-file-location-separate
+trigger: "When adding tests for code in src/"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Test File Location Separate
+
+## Action
+
+Place test files in a separate test location, not mixed with source files
+
+## Evidence
+
+- Pattern in architecture.testLocation: separate
+- Files like src/utils/validation.test.ts
+
+---
+id: ccplugins-instinct-test-file-naming
+trigger: "When naming a test file"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Test File Naming
+
+## Action
+
+Use the pattern *.test.* or *.spec.* (e.g., validation.test.ts)
+
+## Evidence
+
+- FilesInvolved in workflows: **/*.test.*, **/*.spec.*
+
+---
+id: ccplugins-instinct-tdd-commit-sequence
+trigger: "When following test-driven development"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Tdd Commit Sequence
+
+## Action
+
+First write a failing test, then implement code to pass the test, then refactor if needed
+
+## Evidence
+
+- Workflow: test-driven-development
+- Commit sequence: Write failing test → Implement code → Refactor
+
+---
+id: ccplugins-instinct-commit-prefixes
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Commit Prefixes
+
+## Action
+
+Start the commit message with a conventional prefix such as feat, fix, add, chore, refactor, enhance, test
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: feat: implement CCPlugins v2.0...
+
+---
+id: ccplugins-instinct-commit-message-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Commit Message Length
+
+## Action
+
+Keep the commit message concise, around 40 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength: 41
+
+---
+id: ccplugins-instinct-add-or-enhance-command
+trigger: "When introducing a new CLI command or majorly updating an existing one"
+confidence: 0.98
+domain: workflow
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Add Or Enhance Command
+
+## Action
+
+Create/update command markdown under commands/, update README.md, update CHANGELOG.md, update install/uninstall scripts, optionally update CONTRIBUTING.md
+
+## Evidence
+
+- Workflow: add-or-enhance-command
+- FilesInvolved: commands/*.md, README.md, CHANGELOG.md, install.sh, uninstall.py, uninstall.sh
+
+---
+id: ccplugins-instinct-refactor-or-enhance-existing-command
+trigger: "When improving, refactoring, or extending the logic of an existing command"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Refactor Or Enhance Existing Command
+
+## Action
+
+Edit relevant command markdown(s), update README.md/CHANGELOG.md, update related command files if session/folder logic changes, update installer/uninstaller scripts if affected
+
+## Evidence
+
+- Workflow: refactor-or-enhance-existing-command
+- FilesInvolved: commands/*.md, README.md, CHANGELOG.md, install.sh, uninstall.py, uninstall.sh
+
+---
+id: ccplugins-instinct-session-or-folder-path-update
+trigger: "When fixing or improving how commands store session data or handle directories"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Session Or Folder Path Update
+
+## Action
+
+Edit multiple command files to update path/session logic, update README.md/CHANGELOG.md, batch update affected commands
+
+## Evidence
+
+- Workflow: session-or-folder-path-update
+- FilesInvolved: commands/fix-imports.md, commands/implement.md, commands/refactor.md, commands/scaffold.md, commands/security-scan.md, README.md, CHANGELOG.md
+
+---
+id: ccplugins-instinct-quality-checks-and-validation-enhancement
+trigger: "When enforcing or enhancing quality gates or adding validation to commands"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Quality Checks And Validation Enhancement
+
+## Action
+
+Edit commands to add/update validation/quality check logic, update README.md/CHANGELOG.md, update CONTRIBUTING.md if workflow changes
+
+## Evidence
+
+- Workflow: quality-checks-and-validation-enhancement
+- FilesInvolved: commands/commit.md, commands/contributing.md, commands/test.md, commands/todos-to-issues.md, commands/refactor.md, commands/implement.md, README.md, CHANGELOG.md, CONTRIBUTING.md
+
+---
+id: ccplugins-instinct-documentation-overhaul-or-update
+trigger: "When updating documentation to match new features, commands, or architecture"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: b08x/CCPlugins
+---
+
+# Ccplugins Instinct Documentation Overhaul Or Update
+
+## Action
+
+Edit README.md/CHANGELOG.md, edit/add relevant command markdowns, update CONTRIBUTING.md, update commands/docs.md if it exists
+
+## Evidence
+
+- Workflow: documentation-overhaul-or-update
+- FilesInvolved: README.md, CHANGELOG.md, CONTRIBUTING.md, commands/*.md
+

@@ -1,0 +1,6 @@
+interface:
+  display_name: "CCPlugins"
+  short_description: "Repo-specific patterns and workflows for CCPlugins"
+  default_prompt: "Use the CCPlugins repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
